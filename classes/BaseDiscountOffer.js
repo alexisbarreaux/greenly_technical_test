@@ -1,10 +1,6 @@
 import { AbstractDiscountOfferClass } from "./AbstractDiscountOfferClass";
 
 export class BaseDiscountOffer extends AbstractDiscountOfferClass {
-    constructor(expiresIn, discountRateInPercent) {
-        super("Partner", expiresIn, discountRateInPercent)
-    }
-
     updateExpiresIn() {
         this.decreaseExpiresIn(1);
     }

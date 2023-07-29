@@ -16,7 +16,7 @@ export class DiscountOffer {
             case "Vinted":
                 return new VintedDiscountOffer(expiresIn, discountRateInPercent);
             default:
-                return new BaseDiscountOffer(expiresIn, discountRateInPercent);
+                return new BaseDiscountOffer(partnerName, expiresIn, discountRateInPercent);
         }
     }
 }
