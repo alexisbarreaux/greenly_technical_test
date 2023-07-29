@@ -9,7 +9,7 @@ export class AbstractDiscountOfferClass {
         return this.expiresIn <= 0
     }
 
-    updatedDiscount() {
+    updateDiscount() {
         this.updateDiscountInPercent();
         this.updateExpiresIn();
     }
