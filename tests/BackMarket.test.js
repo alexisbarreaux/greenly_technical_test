@@ -1,62 +1,62 @@
-import { Store, DiscountOffer } from "../store";
+import { DiscountOffer } from "../classes/DiscountOffer";
 
 describe("BackMarket", () => {
     describe("expiresIn", () => {
         it("should decrease by 1 when valid", () => {
-            const store = new Store([new DiscountOffer("BackMarket", 2, 3)])
-            store.updateDiscounts()
-            expect(store.discountOffers[0].expiresIn).toEqual(
+            const discountOffer = new DiscountOffer("BackMarket", 2, 3)
+            discountOffer.updatedDiscount()
+            expect(discountOffer.expiresIn).toEqual(
                 1
             );
         });
         it("should decrease  by 1 when expired", () => {
-            const store = new Store([new DiscountOffer("BackMarket", 0, 3)])
-            store.updateDiscounts()
-            expect(store.discountOffers[0].expiresIn).toEqual(
+            const discountOffer = new DiscountOffer("BackMarket", 0, 3)
+            discountOffer.updatedDiscount()
+            expect(discountOffer.expiresIn).toEqual(
                 -1
             );
         });
     });
     describe("discountInPercent", () => {
         it("should decrease by 2 when valid", () => {
-            const store = new Store([new DiscountOffer("BackMarket", 2, 7)])
-            store.updateDiscounts()
-            expect(store.discountOffers[0].discountInPercent).toEqual(
+            const discountOffer = new DiscountOffer("BackMarket", 2, 7)
+            discountOffer.updatedDiscount()
+            expect(discountOffer.discountInPercent).toEqual(
                 5
             );
         });
         it("should decrease by two 4 when expired", () => {
-            const store = new Store([new DiscountOffer("BackMarket", 0, 7)])
-            store.updateDiscounts()
-            expect(store.discountOffers[0].discountInPercent).toEqual(
+            const discountOffer = new DiscountOffer("BackMarket", 0, 7)
+            discountOffer.updatedDiscount()
+            expect(discountOffer.discountInPercent).toEqual(
                 3
             );
         });
         it("should decrease by 2 when expiring today", () => {
-            const store = new Store([new DiscountOffer("BackMarket", 1, 7)])
-            store.updateDiscounts()
-            expect(store.discountOffers[0].discountInPercent).toEqual(
+            const discountOffer = new DiscountOffer("BackMarket", 1, 7)
+            discountOffer.updatedDiscount()
+            expect(discountOffer.discountInPercent).toEqual(
                 5
             );
         });
         it("should not decrease below 0", () => {
-            const store = new Store([new DiscountOffer("BackMarket", 2, 0)])
-            store.updateDiscounts()
-            expect(store.discountOffers[0].discountInPercent).toEqual(
+            const discountOffer = new DiscountOffer("BackMarket", 2, 0)
+            discountOffer.updatedDiscount()
+            expect(discountOffer.discountInPercent).toEqual(
                 0
             );
         });
         it("should not decrease below 0 when decreasing by 2", () => {
-            const store = new Store([new DiscountOffer("BackMarket", 0, 1)])
-            store.updateDiscounts()
-            expect(store.discountOffers[0].discountInPercent).toEqual(
+            const discountOffer = new DiscountOffer("BackMarket", 0, 1)
+            discountOffer.updatedDiscount()
+            expect(discountOffer.discountInPercent).toEqual(
                 0
             );
         });
         it("should not decrease below 0 when decreasing by 4", () => {
-            const store = new Store([new DiscountOffer("BackMarket", 0, 3)])
-            store.updateDiscounts()
-            expect(store.discountOffers[0].discountInPercent).toEqual(
+            const discountOffer = new DiscountOffer("BackMarket", 0, 3)
+            discountOffer.updatedDiscount()
+            expect(discountOffer.discountInPercent).toEqual(
                 0
             );
         });
