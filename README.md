@@ -24,7 +24,7 @@ We have recently signed a new partner BackMarket. This requires an update to our
 
 ## Instructions
 
-- [ ] Clone this repository (do **not** fork it)
+- [X] Clone this repository (do **not** fork it)
 - [ ] Implement the required feature
 - [ ] Publish it on GitHub
 - [ ] Send us the link and tell us approximatively how much time you spent on this assignment
