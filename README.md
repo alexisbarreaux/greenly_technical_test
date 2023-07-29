@@ -25,8 +25,8 @@ We have recently signed a new partner BackMarket. This requires an update to our
 ## Instructions
 
 - [X] Clone this repository (do **not** fork it)
-- [ ] Implement the required feature
-- [ ] Publish it on GitHub
+- [X] Implement the required feature
+- [X] Publish it on GitHub
 - [ ] Send us the link and tell us approximatively how much time you spent on this assignment
 
 You are encouraged to refactor the existing code before adding your own, as you would do if this was a real task in real life. We strongly recommend that you write tests to help you during this process.
