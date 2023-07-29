@@ -22,7 +22,7 @@ export class Store {
               this.discountOffers[i].discountInPercent = this.discountOffers[i].discountInPercent - 1;
             }
             else {
-              this.discountOffers[i].discountInPercent = this.discountOffers[i].discountInPercent - 2;
+              this.discountOffers[i].discountInPercent = this.discountOffers[i].discountInPercent - Math.min(2, this.discountOffers[i].discountInPercent);
             }
           }
         }
@@ -55,7 +55,7 @@ export class Store {
                   this.discountOffers[i].discountInPercent = this.discountOffers[i].discountInPercent - 1;
                 }
                 else {
-                  this.discountOffers[i].discountInPercent = this.discountOffers[i].discountInPercent - 2;
+                  this.discountOffers[i].discountInPercent = this.discountOffers[i].discountInPercent - Math.min(2, this.discountOffers[i].discountInPercent);
                 }
               }
             }

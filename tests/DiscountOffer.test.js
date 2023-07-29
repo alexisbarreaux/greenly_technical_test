@@ -39,5 +39,19 @@ describe("DiscountOffer", () => {
                 6
             );
         });
+        it("should not decrease below 0", () => {
+            const store = new Store([new DiscountOffer("test", 2, 0)])
+            store.updateDiscounts()
+            expect(store.discountOffers[0].discountInPercent).toEqual(
+                0
+            );
+        });
+        it("should not decrease below 0 when decreasing by 2", () => {
+            const store = new Store([new DiscountOffer("test", 0, 1)])
+            store.updateDiscounts()
+            expect(store.discountOffers[0].discountInPercent).toEqual(
+                0
+            );
+        });
     });
 });

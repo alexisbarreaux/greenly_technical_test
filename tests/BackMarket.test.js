@@ -39,5 +39,26 @@ describe("BackMarket", () => {
                 5
             );
         });
+        it("should not decrease below 0", () => {
+            const store = new Store([new DiscountOffer("BackMarket", 2, 0)])
+            store.updateDiscounts()
+            expect(store.discountOffers[0].discountInPercent).toEqual(
+                0
+            );
+        });
+        it("should not decrease below 0 when decreasing by 2", () => {
+            const store = new Store([new DiscountOffer("BackMarket", 0, 1)])
+            store.updateDiscounts()
+            expect(store.discountOffers[0].discountInPercent).toEqual(
+                0
+            );
+        });
+        it("should not decrease below 0 when decreasing by 4", () => {
+            const store = new Store([new DiscountOffer("BackMarket", 0, 3)])
+            store.updateDiscounts()
+            expect(store.discountOffers[0].discountInPercent).toEqual(
+                0
+            );
+        });
     });
 });
