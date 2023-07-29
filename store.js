@@ -18,7 +18,12 @@ export class Store {
       ) {
         if (this.discountOffers[i].discountInPercent > 0) {
           if (this.discountOffers[i].partnerName != "Ilek") {
-            this.discountOffers[i].discountInPercent = this.discountOffers[i].discountInPercent - 1;
+            if (this.discountOffers[i].partnerName != "BackMarket") {
+              this.discountOffers[i].discountInPercent = this.discountOffers[i].discountInPercent - 1;
+            }
+            else {
+              this.discountOffers[i].discountInPercent = this.discountOffers[i].discountInPercent - 2;
+            }
           }
         }
       } else {
@@ -46,7 +51,12 @@ export class Store {
           if (this.discountOffers[i].partnerName != "Vinted") {
             if (this.discountOffers[i].discountInPercent > 0) {
               if (this.discountOffers[i].partnerName != "Ilek") {
-                this.discountOffers[i].discountInPercent = this.discountOffers[i].discountInPercent - 1;
+                if (this.discountOffers[i].partnerName != "BackMarket") {
+                  this.discountOffers[i].discountInPercent = this.discountOffers[i].discountInPercent - 1;
+                }
+                else {
+                  this.discountOffers[i].discountInPercent = this.discountOffers[i].discountInPercent - 2;
+                }
               }
             }
           } else {
