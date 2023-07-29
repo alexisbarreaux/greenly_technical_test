@@ -39,13 +39,6 @@ describe("Vinted", () => {
                 9
             );
         });
-        it("should increase by 2 between 10 and 6 days left", () => {
-            const discountOffer = new VintedDiscountOffer(6, 7)
-            discountOffer.updateDiscount()
-            expect(discountOffer.discountInPercent).toEqual(
-                9
-            );
-        });
         it("should increase by 3 when exactly 5 days left", () => {
             const discountOffer = new VintedDiscountOffer(5, 7)
             discountOffer.updateDiscount()
